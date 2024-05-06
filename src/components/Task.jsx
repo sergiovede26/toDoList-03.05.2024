@@ -1,13 +1,25 @@
-import "../styles/task.css"
+import PropTypes from 'prop-types';
+import "../styles/task.css";
+import { Trash2 } from "react-feather";
 
-function Task(){
+function Task({ task }) {
+  return (
+    <div className="task">
+      <button className="checkContainer">
+        <div />
+      </button>
+      <p>{task.title}</p>
 
-    return (
-        <div className="task">
-            <button className="checkContainer">
-                <div></div>
-            </button>
-        </div>
-    );
+      <button className="deleteButton">
+        <Trash2 size="20" />
+      </button>
+    </div>
+  );
 }
+
+
+Task.propTypes = {
+  task : PropTypes.any
+}
+
 export default Task;
