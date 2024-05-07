@@ -10,8 +10,9 @@ function Header({ onAddTask }) {
   const [title, setTitle] = useState('');
 
   function handleSubmit(e) {
-    e.preventDefault(); //for prevent the refreshing wesite
+    e.preventDefault(); //for prevent the refreshing website
     onAddTask(title);
+    setTitle('');
   }
 
   function onChangeTitle(e) {
