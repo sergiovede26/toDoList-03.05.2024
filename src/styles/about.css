@@ -1,0 +1,16 @@
+
+.profileCard1 {
+    width: 257px;
+    height: 270px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background: #F6F3A9;
+}
+
+.profileCard2 {
+    width: 257px;
+    height: 270px;
+    border-radius: 20px;
+    border: 1px solid #000;
+    background:  #D983E1;
+}

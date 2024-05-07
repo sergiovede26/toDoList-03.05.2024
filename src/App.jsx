@@ -1,6 +1,9 @@
 import { useEffect,useState } from "react";
 import { Routes, Route } from "react-router-dom"; 
 
+
+import NavBar from "./components/NavBar";
+import About from "./components/About";
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import Footer from "./components/Footer";
@@ -63,16 +66,21 @@ function App() {
 
   return (
     <div>
-
-      <section>
+      
+      <NavBar />
       <Header onAddTask={addTask} />
       <Tasks tasks={tasks} onDelete={deleteTaskbyId} onComplete={toogleTskComById} />
-      <Footer />
-      </section>
+      
 
+    
       <Routes>
-        <Route path="*" element={<NotFound />} />
+          <Route path="/about" element={<About />}/> 
+          <Route path='*' element={<NotFound />}/>
       </Routes>
+  
+    
+
+      <Footer />
 
       
     </div>
