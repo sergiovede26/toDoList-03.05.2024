@@ -1,6 +1,5 @@
-import { useEffect,useState } from "react";
-import { Routes, Route } from "react-router-dom"; 
-
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import About from "./components/About";
@@ -10,22 +9,21 @@ import Footer from "./components/Footer";
 import NotFound from "./components/NotFound";
 
 const localStorageKey = "todo:savedTasks";
- 
 
 function App() {
   const [tasks, setTasks] = useState([]);
 
-  function loadSavedTasks(){
+  function loadSavedTasks() {
     const saved = localStorage.getItem(localStorageKey);
     console.log(saved);
-    if(saved){
+    if (saved) {
       setTasks(JSON.parse(saved));
     }
   }
 
-  useEffect(()=> {
+  useEffect(() => {
     loadSavedTasks();
-  }, [])
+  }, []);
 
   function addTask(taskTitle) {
     //we use setTask to destructure and mantain the old value of the array:
@@ -45,15 +43,17 @@ function App() {
     setTasks(newTasks);
     localStorage.setItem(localStorageKey, JSON.stringify(newTasks));
   }
- 
-   function deleteTaskbyId(taskId) {
-     const newTasks = tasks.filter((task) => task.id !== taskId);
-     setTasksAndSave(newTasks);
-   }
+
+  function deleteTaskbyId(taskId) {
+    const newTasks = tasks.filter((task) => task.id !== taskId);
+    setTasksAndSave(newTasks);
+  }
 
   function toogleTskComById(taskId) {
-    const newTasks = tasks.map((task) => {  //running again through the taskArr
-      if (task.id === taskId) {            //by checking the ckecked element
+    const newTasks = tasks.map((task) => {
+      //running again through the taskArr
+      if (task.id === taskId) {
+        //by checking the ckecked element
         return {
           ...task,
           isCompleted: !task.isCompleted, //to revert the boolean value
@@ -65,28 +65,24 @@ function App() {
   }
 
   return (
-    <div>
-      
+    <>
       <NavBar />
       <Header onAddTask={addTask} />
-      <Tasks tasks={tasks} onDelete={deleteTaskbyId} onComplete={toogleTskComById} />
-      
+      <Tasks
+        tasks={tasks}
+        onDelete={deleteTaskbyId}
+        onComplete={toogleTskComById}
+      />
 
-    
       <Routes>
-          <Route path="/about" element={<About />}/> 
-          <Route path='*' element={<NotFound />}/>
+        <Route path="/about" element={<About />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
-  
-    
 
       <Footer />
-
       
-    </div>
-
-    
-  )
+    </>
+  );
 }
 
 export default App;

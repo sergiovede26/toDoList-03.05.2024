@@ -1,6 +1,5 @@
 import "../styles/footer.css";
 import gitHubLogo from "../assets/github-mark.svg";
-import { Eye } from "react-feather";
 
 function Footer() {
   return (
