@@ -6,7 +6,7 @@ function Footer() {
     <div className="footerBar">
       <ul>
         <li>
-          <a href="https://github.com/raffaellacff/toDoList-03.05.2024">
+          <a href="https://github.com/raffaellacff">
             Raffaella Florissi
           </a>
         </li>
@@ -14,7 +14,7 @@ function Footer() {
           <img src={gitHubLogo} alt="" />
         </li>
         <li>
-          <a href="https://github.com/sergiovede26/toDoList-03.05.2024">
+          <a href="https://github.com/sergiovede26">
             Sergio Diaz
           </a>
         </li>

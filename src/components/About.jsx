@@ -29,7 +29,7 @@ function About() {
                 learning more from React.js{" "}
               </p>
               <span>
-                <a href="https://github.com/raffaellacff/toDoList-03.05.2024">
+                <a href="https://github.com/sergiovede26/toDoList-03.05.2024">
                   GitHub Profile
                 </a>
               </span>
